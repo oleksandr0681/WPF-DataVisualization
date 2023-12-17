@@ -1,0 +1,12 @@
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\bin\Release\DataVisualization.exe.config
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\bin\Release\DataVisualization.exe
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\bin\Release\DataVisualization.pdb
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\MainWindow.baml
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\MainWindow.g.cs
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\App.g.cs
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\DataVisualization_MarkupCompile.cache
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\DataVisualization.g.resources
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\DataVisualization.Properties.Resources.resources
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\DataVisualization.csproj.GenerateResource.Cache
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\DataVisualization.exe
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\DataVisualization.pdb

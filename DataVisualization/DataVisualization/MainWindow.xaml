@@ -1,0 +1,31 @@
+﻿<Window x:Class="DataVisualization.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:dv="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <WindowsFormsHost Grid.Row="1" Grid.Column="0">
+            <dv:Chart x:Name="DataVisualizationChart" />
+        </WindowsFormsHost>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
+            <Button x:Name="OpenDataFile" Content="Відкрити файл" ToolTip="Відкрити файл з даними." Margin="5" 
+                    Click="OpenDataFile_Click" />
+            <Button x:Name="DrawChart" Content="Накреслити діаграму" Margin="5" Click="DrawChart_Click" />
+            <GroupBox Header="Тип діаграми">
+                <ComboBox x:Name="ChartType">
+                    <ComboBoxItem IsSelected="True">Лінійна діаграма</ComboBoxItem>
+                    <ComboBoxItem>Колова діаграма</ComboBoxItem>
+                </ComboBox>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
