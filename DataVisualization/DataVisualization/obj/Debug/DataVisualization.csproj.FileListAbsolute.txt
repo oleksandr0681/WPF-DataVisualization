@@ -1,7 +1,6 @@
 c:\users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\bin\Debug\DataVisualization.exe.config
 C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\bin\Debug\DataVisualization.exe
 C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\bin\Debug\DataVisualization.pdb
-C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Debug\DataVisualization.csprojResolveAssemblyReference.cache
 C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Debug\MainWindow.baml
 C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Debug\MainWindow.g.cs
 C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Debug\App.g.cs

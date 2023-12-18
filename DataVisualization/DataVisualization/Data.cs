@@ -72,25 +72,6 @@ namespace DataVisualization
             return null;
         }
 
-        public static void DrawChart(ChartData chartData)
-        {
-            chartData.WinFormsChart.Titles.Clear();
-            chartData.WinFormsChart.ChartAreas.Clear();
-            chartData.WinFormsChart.Series.Clear();
-            chartData.WinFormsChart.Legends.Clear();
-            chartData.WinFormsChart.ChartAreas.Add(new ChartArea("Default"));
-            chartData.WinFormsChart.Series.Add(new Series("Series"));
-            chartData.WinFormsChart.Series["Series"].ChartType = SeriesChartType.Doughnut;
-            chartData.WinFormsChart.Legends.Add(new Legend());
-            if (chartData.axisXPoints.Count == chartData.axisYPoints.Count)
-            {
-                for (int i=0; i<chartData.axisXPoints.Count; i++)
-                {
-                    chartData.WinFormsChart.Series["Series"].Points.AddXY(chartData.axisXPoints[i], chartData.axisYPoints[i]);
-                }
-            }
-        }
-
         public static void DrawChart(ChartData chartData, InputValues inputValues)
         {
             chartData.WinFormsChart.Titles.Clear();
@@ -108,7 +89,66 @@ namespace DataVisualization
             {
                 chartData.WinFormsChart.Series["Series"].ChartType = SeriesChartType.Doughnut;
             }
-            
+            else if (inputValues.ChartType == "Пелюсткова діаграма")
+            {
+                chartData.WinFormsChart.Series["Series"].ChartType = SeriesChartType.Radar;
+            }
+            else if (inputValues.ChartType == "Стовпчаста діаграма")
+            {
+                chartData.WinFormsChart.Series["Series"].ChartType = SeriesChartType.Column;
+            }
+            else if (inputValues.ChartType == "Пірамідальна діаграма")
+            {
+                chartData.WinFormsChart.Series["Series"].ChartType = SeriesChartType.Pyramid;
+            }
+            if (inputValues.LineType == "Суцільна")
+            {
+                chartData.WinFormsChart.Series["Series"].BorderDashStyle = ChartDashStyle.Solid;
+            }
+            else if (inputValues.LineType == "Штрихова")
+            {
+                chartData.WinFormsChart.Series["Series"].BorderDashStyle = ChartDashStyle.Dash;
+            }
+            else if (inputValues.LineType == "Штрих-пунктирна")
+            {
+                chartData.WinFormsChart.Series["Series"].BorderDashStyle = ChartDashStyle.DashDot;    
+            }
+            if (inputValues.LineColor == "Синій")
+            {
+                chartData.WinFormsChart.Series["Series"].Color = Color.Blue;
+            }
+            else if (inputValues.LineColor == "Зелений")
+            {
+                chartData.WinFormsChart.Series["Series"].Color = Color.Green;
+            }
+            else if (inputValues.LineColor == "Червоний")
+            {
+                chartData.WinFormsChart.Series["Series"].Color = Color.Red;
+            }
+            else if (inputValues.LineColor == "Чорний")
+            {
+                chartData.WinFormsChart.Series["Series"].Color = Color.Black;
+            }
+            if (inputValues.BackgroundColor == "Білий")
+            {
+                chartData.WinFormsChart.ChartAreas["Default"].BackColor = Color.White;
+            }
+            else if (inputValues.BackgroundColor == "Блакитний")
+            {
+                chartData.WinFormsChart.ChartAreas["Default"].BackColor = Color.Azure;
+            }
+            else if (inputValues.BackgroundColor == "Пшеничний")
+            {
+                chartData.WinFormsChart.ChartAreas["Default"].BackColor = Color.Wheat;
+            }
+            else if (inputValues.BackgroundColor == "Бежевий")
+            {
+                chartData.WinFormsChart.ChartAreas["Default"].BackColor = Color.Beige;
+            }
+            else if (inputValues.BackgroundColor == "Сірий")
+            {
+                chartData.WinFormsChart.ChartAreas[0].BackColor = Color.LightGray;
+            }
             chartData.WinFormsChart.Legends.Add(new Legend());
             if (chartData.axisXPoints.Count == chartData.axisYPoints.Count)
             {

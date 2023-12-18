@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         xmlns:dv="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="600" Width="800" MinWidth="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -17,13 +17,40 @@
             <dv:Chart x:Name="DataVisualizationChart" />
         </WindowsFormsHost>
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
-            <Button x:Name="OpenDataFile" Content="Відкрити файл" ToolTip="Відкрити файл з даними." Margin="5" 
-                    Click="OpenDataFile_Click" />
-            <Button x:Name="DrawChart" Content="Накреслити діаграму" Margin="5" Click="DrawChart_Click" />
+            <Button x:Name="openDataFile" Content="Відкрити файл" ToolTip="Відкрити файл з даними." Margin="5" 
+                    Click="openDataFile_Click" />
+            <Button x:Name="drawChart" Content="Накреслити діаграму" Margin="5" Click="drawChart_Click" />
             <GroupBox Header="Тип діаграми">
-                <ComboBox x:Name="ChartType">
+                <ComboBox x:Name="chartType" MinWidth="180">
                     <ComboBoxItem IsSelected="True">Лінійна діаграма</ComboBoxItem>
                     <ComboBoxItem>Колова діаграма</ComboBoxItem>
+                    <ComboBoxItem>Пелюсткова діаграма</ComboBoxItem>
+                    <ComboBoxItem>Стовпчаста діаграма</ComboBoxItem>
+                    <ComboBoxItem>Пірамідальна діаграма</ComboBoxItem>
+                </ComboBox>
+            </GroupBox>
+            <GroupBox Header="Тип ліній" >
+                <ComboBox x:Name="lineType">
+                    <ComboBoxItem IsSelected="True">Суцільна</ComboBoxItem>
+                    <ComboBoxItem>Штрихова</ComboBoxItem>
+                    <ComboBoxItem>Штрих-пунктирна</ComboBoxItem>
+                </ComboBox>
+            </GroupBox>
+            <GroupBox Header="Колір ліній">
+                <ComboBox x:Name="lineColor">
+                    <ComboBoxItem IsSelected="True">Синій</ComboBoxItem>
+                    <ComboBoxItem>Зелений</ComboBoxItem>
+                    <ComboBoxItem>Червоний</ComboBoxItem>
+                    <ComboBoxItem>Чорний</ComboBoxItem>
+                </ComboBox>
+            </GroupBox>
+            <GroupBox Header="Колір фону">
+                <ComboBox x:Name="backgroundColor">
+                    <ComboBoxItem IsSelected="True">Білий</ComboBoxItem>
+                    <ComboBoxItem>Блакитний</ComboBoxItem>
+                    <ComboBoxItem>Пшеничний</ComboBoxItem>
+                    <ComboBoxItem>Бежевий</ComboBoxItem>
+                    <ComboBoxItem>Сірий</ComboBoxItem>
                 </ComboBox>
             </GroupBox>
         </StackPanel>

@@ -35,14 +35,26 @@ namespace DataVisualization
         private InputValues GetInputValues()
         {
             InputValues inputValues = new InputValues();
-            if(ChartType.SelectedItem != null && ChartType.SelectedItem is ComboBoxItem)
+            if (chartType.SelectedItem != null && chartType.SelectedItem is ComboBoxItem)
             {
-                inputValues.ChartType = (ChartType.SelectedItem as ComboBoxItem).Content.ToString();
+                inputValues.ChartType = (chartType.SelectedItem as ComboBoxItem).Content.ToString();
+            }
+            if (lineType.SelectedItem != null && lineType.SelectedItem is ComboBoxItem)
+            {
+                inputValues.LineType = (lineType.SelectedItem as ComboBoxItem).Content.ToString();
+            }
+            if (lineColor.SelectedItem != null && lineColor.SelectedItem is ComboBoxItem)
+            {
+                inputValues.LineColor = (lineColor.SelectedItem as ComboBoxItem).Content.ToString();
+            }
+            if (backgroundColor.SelectedItem != null && backgroundColor.SelectedItem is ComboBoxItem)
+            {
+                inputValues.BackgroundColor = (backgroundColor.SelectedItem as ComboBoxItem).Content.ToString();
             }
             return inputValues;
         }
 
-        private void OpenDataFile_Click(object sender, RoutedEventArgs e)
+        private void openDataFile_Click(object sender, RoutedEventArgs e)
         {
             List<string> points = new List<string>();
             string exceptionMessage = Data.Open(ref points);
@@ -68,7 +80,7 @@ namespace DataVisualization
             }
         }
 
-        private void DrawChart_Click(object sender, RoutedEventArgs e)
+        private void drawChart_Click(object sender, RoutedEventArgs e)
         {
             if (listX.Count == 0)
             {

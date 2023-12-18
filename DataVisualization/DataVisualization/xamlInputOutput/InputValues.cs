@@ -9,5 +9,8 @@ namespace DataVisualization.xamlInputOutput
     public class InputValues
     {
         public string ChartType { get; set; }
+        public string LineType { get; set; }
+        public string LineColor { get; set; }
+        public string BackgroundColor { get; set; }
     }
 }
