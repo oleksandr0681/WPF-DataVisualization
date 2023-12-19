@@ -79,55 +79,64 @@ namespace DataVisualization
             chartData.WinFormsChart.Series.Clear();
             chartData.WinFormsChart.Legends.Clear();
             chartData.WinFormsChart.ChartAreas.Add(new ChartArea("Default"));
-            chartData.WinFormsChart.Series.Add(new Series("Series"));
-            chartData.WinFormsChart.Series["Series"].ChartType = SeriesChartType.Line;
+            string seriesName;
+            if (inputValues.SeriesName != null)
+            {
+                seriesName = inputValues.SeriesName;
+            }
+            else
+            {
+                seriesName = "Series";
+            }
+            chartData.WinFormsChart.Series.Add(new Series(seriesName));
+            chartData.WinFormsChart.Series[seriesName].ChartType = SeriesChartType.Line;
             if (inputValues.ChartType == "Лінійна діаграма")
             {
-                chartData.WinFormsChart.Series["Series"].ChartType = SeriesChartType.Line;
+                chartData.WinFormsChart.Series[seriesName].ChartType = SeriesChartType.Line;
             }
             else if (inputValues.ChartType == "Колова діаграма")
             {
-                chartData.WinFormsChart.Series["Series"].ChartType = SeriesChartType.Doughnut;
+                chartData.WinFormsChart.Series[seriesName].ChartType = SeriesChartType.Doughnut;
             }
             else if (inputValues.ChartType == "Пелюсткова діаграма")
             {
-                chartData.WinFormsChart.Series["Series"].ChartType = SeriesChartType.Radar;
+                chartData.WinFormsChart.Series[seriesName].ChartType = SeriesChartType.Radar;
             }
             else if (inputValues.ChartType == "Стовпчаста діаграма")
             {
-                chartData.WinFormsChart.Series["Series"].ChartType = SeriesChartType.Column;
+                chartData.WinFormsChart.Series[seriesName].ChartType = SeriesChartType.Column;
             }
             else if (inputValues.ChartType == "Пірамідальна діаграма")
             {
-                chartData.WinFormsChart.Series["Series"].ChartType = SeriesChartType.Pyramid;
+                chartData.WinFormsChart.Series[seriesName].ChartType = SeriesChartType.Pyramid;
             }
             if (inputValues.LineType == "Суцільна")
             {
-                chartData.WinFormsChart.Series["Series"].BorderDashStyle = ChartDashStyle.Solid;
+                chartData.WinFormsChart.Series[seriesName].BorderDashStyle = ChartDashStyle.Solid;
             }
             else if (inputValues.LineType == "Штрихова")
             {
-                chartData.WinFormsChart.Series["Series"].BorderDashStyle = ChartDashStyle.Dash;
+                chartData.WinFormsChart.Series[seriesName].BorderDashStyle = ChartDashStyle.Dash;
             }
             else if (inputValues.LineType == "Штрих-пунктирна")
             {
-                chartData.WinFormsChart.Series["Series"].BorderDashStyle = ChartDashStyle.DashDot;    
+                chartData.WinFormsChart.Series[seriesName].BorderDashStyle = ChartDashStyle.DashDot;    
             }
             if (inputValues.LineColor == "Синій")
             {
-                chartData.WinFormsChart.Series["Series"].Color = Color.Blue;
+                chartData.WinFormsChart.Series[seriesName].Color = Color.Blue;
             }
             else if (inputValues.LineColor == "Зелений")
             {
-                chartData.WinFormsChart.Series["Series"].Color = Color.Green;
+                chartData.WinFormsChart.Series[seriesName].Color = Color.Green;
             }
             else if (inputValues.LineColor == "Червоний")
             {
-                chartData.WinFormsChart.Series["Series"].Color = Color.Red;
+                chartData.WinFormsChart.Series[seriesName].Color = Color.Red;
             }
             else if (inputValues.LineColor == "Чорний")
             {
-                chartData.WinFormsChart.Series["Series"].Color = Color.Black;
+                chartData.WinFormsChart.Series[seriesName].Color = Color.Black;
             }
             if (inputValues.BackgroundColor == "Білий")
             {
@@ -149,12 +158,63 @@ namespace DataVisualization
             {
                 chartData.WinFormsChart.ChartAreas[0].BackColor = Color.LightGray;
             }
-            chartData.WinFormsChart.Legends.Add(new Legend());
+            if (inputValues.AxisXTitle != null)
+            {
+                chartData.WinFormsChart.ChartAreas["Default"].AxisX.Title = inputValues.AxisXTitle;
+                chartData.WinFormsChart.ChartAreas["Default"].AxisX.TitleAlignment = StringAlignment.Far;
+            }
+            if (inputValues.AxisYTitle != null)
+            {
+                chartData.WinFormsChart.ChartAreas["Default"].AxisY.Title = inputValues.AxisYTitle;
+                chartData.WinFormsChart.ChartAreas["Default"].AxisY.TitleAlignment = StringAlignment.Far;
+                chartData.WinFormsChart.ChartAreas["Default"].AxisY.TextOrientation = TextOrientation.Horizontal;
+            }
+            chartData.WinFormsChart.Legends.Add(new Legend("Legend"));
+            if (inputValues.LegendTitle != null)
+            {
+                chartData.WinFormsChart.Legends["Legend"].Title = inputValues.LegendTitle;
+            }
+            if (inputValues.LegendDocking == "Праворуч")
+            {
+                chartData.WinFormsChart.Legends["Legend"].Docking = Docking.Right;
+            }
+            else if (inputValues.LegendDocking == "Ліворуч")
+            {
+                chartData.WinFormsChart.Legends["Legend"].Docking = Docking.Left;
+            }
+            else if (inputValues.LegendDocking == "Зверху")
+            {
+                chartData.WinFormsChart.Legends["Legend"].Docking = Docking.Top;
+            }
+            else if (inputValues.LegendDocking == "Знизу")
+            {
+                chartData.WinFormsChart.Legends["Legend"].Docking = Docking.Bottom;
+            }
+            if (inputValues.LegendBackgroundColor == "Білий")
+            {
+                chartData.WinFormsChart.Legends["Legend"].BackColor = Color.White;
+            }
+            else if (inputValues.LegendBackgroundColor == "Блакитний")
+            {
+                chartData.WinFormsChart.Legends["Legend"].BackColor = Color.Azure;
+            }
+            else if (inputValues.LegendBackgroundColor == "Пшеничний")
+            {
+                chartData.WinFormsChart.Legends["Legend"].BackColor = Color.Wheat;
+            }
+            else if (inputValues.LegendBackgroundColor == "Бежевий")
+            {
+                chartData.WinFormsChart.Legends["Legend"].BackColor = Color.Beige;
+            }
+            else if (inputValues.LegendBackgroundColor == "Сірий")
+            {
+                chartData.WinFormsChart.Legends["Legend"].BackColor = Color.LightGray;
+            }
             if (chartData.axisXPoints.Count == chartData.axisYPoints.Count)
             {
                 for (int i = 0; i < chartData.axisXPoints.Count; i++)
                 {
-                    chartData.WinFormsChart.Series["Series"].Points.AddXY(chartData.axisXPoints[i], chartData.axisYPoints[i]);
+                    chartData.WinFormsChart.Series[seriesName].Points.AddXY(chartData.axisXPoints[i], chartData.axisYPoints[i]);
                 }
             }
         }

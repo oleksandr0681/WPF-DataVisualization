@@ -10,4 +10,5 @@ C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisual
 C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\DataVisualization.csproj.GenerateResource.Cache
 C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\DataVisualization.exe
 C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\DataVisualization.pdb
-C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\DataVisualization.csprojResolveAssemblyReference.cache
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\AboutAuthorWindow.baml
+C:\Users\user\documents\visual studio 2013\Projects\DataVisualization\DataVisualization\obj\Release\AboutAuthorWindow.g.cs

@@ -51,6 +51,18 @@ namespace DataVisualization
             {
                 inputValues.BackgroundColor = (backgroundColor.SelectedItem as ComboBoxItem).Content.ToString();
             }
+            inputValues.LegendTitle = legendTitle.Text;
+            inputValues.SeriesName = seriesName.Text;
+            inputValues.AxisXTitle = axisXTitle.Text;
+            inputValues.AxisYTitle = axisYTitle.Text;
+            if (legendDocking.SelectedItem != null && legendDocking.SelectedItem is ComboBoxItem)
+            {
+                inputValues.LegendDocking = (legendDocking.SelectedItem as ComboBoxItem).Content.ToString();
+            }
+            if (legendBackgroundColor.SelectedItem != null && legendBackgroundColor.SelectedItem is ComboBoxItem)
+            {
+                inputValues.LegendBackgroundColor = (legendBackgroundColor.SelectedItem as ComboBoxItem).Content.ToString();
+            }
             return inputValues;
         }
 
@@ -94,6 +106,12 @@ namespace DataVisualization
                 chartData.axisYPoints = listY;
                 Data.DrawChart(chartData, GetInputValues());
             }
+        }
+
+        private void aboutAuthor_Click(object sender, RoutedEventArgs e)
+        {
+            AboutAuthorWindow aboutAuthor = new AboutAuthorWindow();
+            aboutAuthor.ShowDialog();
         }
     }
 }

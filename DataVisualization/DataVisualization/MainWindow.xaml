@@ -3,20 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         xmlns:dv="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
-        Title="MainWindow" Height="600" Width="800" MinWidth="500">
+        Title="MainWindow" Height="600" Width="800" MinHeight="580" MinWidth="500">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <WindowsFormsHost Grid.Row="1" Grid.Column="0">
+        <WindowsFormsHost Grid.Column="0">
             <dv:Chart x:Name="DataVisualizationChart" />
         </WindowsFormsHost>
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
+        <StackPanel Grid.Column="1" Margin="10">
             <Button x:Name="openDataFile" Content="Відкрити файл" ToolTip="Відкрити файл з даними." Margin="5" 
                     Click="openDataFile_Click" />
             <Button x:Name="drawChart" Content="Накреслити діаграму" Margin="5" Click="drawChart_Click" />
@@ -53,6 +49,36 @@
                     <ComboBoxItem>Сірий</ComboBoxItem>
                 </ComboBox>
             </GroupBox>
+            <GroupBox Header="Заголовок легенди">
+                <TextBox x:Name="legendTitle" Text="Середня температура січня" />
+            </GroupBox>
+            <GroupBox Header="Назва ряда">
+                <TextBox x:Name="seriesName" Text="Температура" />
+            </GroupBox>
+            <GroupBox Header="Вісь X">
+                <TextBox x:Name="axisXTitle" Text="Рік" />
+            </GroupBox>
+            <GroupBox Header="Вісь Y">
+                <TextBox x:Name="axisYTitle" Text="t, °C" />
+            </GroupBox>
+            <GroupBox Header="Місце легенди">
+                <ComboBox x:Name="legendDocking">
+                    <ComboBoxItem IsSelected="True">Праворуч</ComboBoxItem>
+                    <ComboBoxItem>Ліворуч</ComboBoxItem>
+                    <ComboBoxItem>Зверху</ComboBoxItem>
+                    <ComboBoxItem>Знизу</ComboBoxItem>
+                </ComboBox>
+            </GroupBox>
+            <GroupBox Header="Колір фону легенди">
+                <ComboBox x:Name="legendBackgroundColor">
+                    <ComboBoxItem IsSelected="True">Білий</ComboBoxItem>
+                    <ComboBoxItem>Блакитний</ComboBoxItem>
+                    <ComboBoxItem>Пшеничний</ComboBoxItem>
+                    <ComboBoxItem>Бежевий</ComboBoxItem>
+                    <ComboBoxItem>Сірий</ComboBoxItem>
+                </ComboBox>
+            </GroupBox>
+            <Button x:Name="aboutAuthor" Content="Про автора" Margin="5" Click="aboutAuthor_Click" />
         </StackPanel>
     </Grid>
 </Window>

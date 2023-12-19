@@ -58,7 +58,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AboutAuthorWindow.xaml.cs">
+      <DependentUpon>AboutAuthorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="xamlInputOutput\InputValues.cs" />
+    <Page Include="AboutAuthorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

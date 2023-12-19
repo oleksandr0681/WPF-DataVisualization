@@ -12,5 +12,11 @@ namespace DataVisualization.xamlInputOutput
         public string LineType { get; set; }
         public string LineColor { get; set; }
         public string BackgroundColor { get; set; }
+        public string LegendTitle { get; set; }
+        public string SeriesName { get; set; }
+        public string AxisXTitle { get; set; }
+        public string AxisYTitle { get; set; }
+        public string LegendDocking { get; set; }
+        public string LegendBackgroundColor { get; set; }
     }
 }
