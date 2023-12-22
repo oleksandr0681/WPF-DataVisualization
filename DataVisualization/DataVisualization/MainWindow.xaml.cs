@@ -76,7 +76,7 @@ namespace DataVisualization
             }
             else
             {
-                exceptionMessage = Data.SpitAxes(points, out listX, out listY);
+                exceptionMessage = Data.SplitAxes(points, out listX, out listY);
                 if (exceptionMessage != null)
                 {
                     MessageBox.Show(exceptionMessage);

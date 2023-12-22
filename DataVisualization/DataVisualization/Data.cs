@@ -48,28 +48,36 @@ namespace DataVisualization
             return exceptionMessage;
         }
 
-        public static string SpitAxes(IList<string> points, out List<double> axisX, out List<double> axisY)
+        public static string SplitAxes(IList<string> points, out List<double> axisX, out List<double> axisY)
         {
+            string exceptionMessage = null;
             axisX = new List<double>();
             axisY = new List<double>();
             for (int i = 0; i < points.Count; i++)
             {
                 string[] charPoint = points[i].Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                double doubleResultX;
-                bool conversionXSucceeded = double.TryParse(charPoint[0], out doubleResultX);
-                double doubleResultY;
-                bool conversionYSucceeded = double.TryParse(charPoint[1], out doubleResultY);
-                if (conversionXSucceeded == true && conversionYSucceeded == true)
+                try
                 {
-                    axisX.Add(doubleResultX);
-                    axisY.Add(doubleResultY);
+                    double doubleResultX;
+                    bool conversionXSucceeded = double.TryParse(charPoint[0], out doubleResultX);
+                    double doubleResultY;
+                    bool conversionYSucceeded = double.TryParse(charPoint[1], out doubleResultY);
+                    if (conversionXSucceeded == true && conversionYSucceeded == true)
+                    {
+                        axisX.Add(doubleResultX);
+                        axisY.Add(doubleResultY);
+                    }
+                    else
+                    {
+                        return "Помилка у вихідних даних.";
+                    }
                 }
-                else
+                catch(Exception ex)
                 {
-                    return "Помилка у вихідних даних.";
+                    exceptionMessage = ex.Message;
                 }
             }
-            return null;
+            return exceptionMessage;
         }
 
         public static void DrawChart(ChartData chartData, InputValues inputValues)
